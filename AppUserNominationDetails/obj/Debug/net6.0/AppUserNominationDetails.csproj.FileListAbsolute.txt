@@ -1,0 +1,17 @@
+C:\Users\DELL\Desktop\BravoStar_Project2024\BravoStar\AppUserNominationDetails\obj\Debug\net6.0\AppUserNominationDetails.csproj.AssemblyReference.cache
+C:\Users\DELL\Desktop\BravoStar_Project2024\BravoStar\AppUserNominationDetails\obj\Debug\net6.0\AppUserNominationDetails.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\DELL\Desktop\BravoStar_Project2024\BravoStar\AppUserNominationDetails\obj\Debug\net6.0\AppUserNominationDetails.AssemblyInfoInputs.cache
+C:\Users\DELL\Desktop\BravoStar_Project2024\BravoStar\AppUserNominationDetails\obj\Debug\net6.0\AppUserNominationDetails.AssemblyInfo.cs
+C:\Users\DELL\Desktop\BravoStar_Project2024\BravoStar\AppUserNominationDetails\obj\Debug\net6.0\AppUserNominationDetails.csproj.CoreCompileInputs.cache
+C:\Users\DELL\Desktop\BravoStar_Project2024\BravoStar\AppUserNominationDetails\bin\Debug\net6.0\AppUserNominationDetails.deps.json
+C:\Users\DELL\Desktop\BravoStar_Project2024\BravoStar\AppUserNominationDetails\bin\Debug\net6.0\AppUserNominationDetails.dll
+C:\Users\DELL\Desktop\BravoStar_Project2024\BravoStar\AppUserNominationDetails\bin\Debug\net6.0\AppUserNominationDetails.pdb
+C:\Users\DELL\Desktop\BravoStar_Project2024\BravoStar\AppUserNominationDetails\bin\Debug\net6.0\Common.dll
+C:\Users\DELL\Desktop\BravoStar_Project2024\BravoStar\AppUserNominationDetails\bin\Debug\net6.0\Domain.dll
+C:\Users\DELL\Desktop\BravoStar_Project2024\BravoStar\AppUserNominationDetails\bin\Debug\net6.0\Common.pdb
+C:\Users\DELL\Desktop\BravoStar_Project2024\BravoStar\AppUserNominationDetails\bin\Debug\net6.0\Domain.pdb
+C:\Users\DELL\Desktop\BravoStar_Project2024\BravoStar\AppUserNominationDetails\obj\Debug\net6.0\AppUserNominationDetails.csproj.CopyComplete
+C:\Users\DELL\Desktop\BravoStar_Project2024\BravoStar\AppUserNominationDetails\obj\Debug\net6.0\AppUserNominationDetails.dll
+C:\Users\DELL\Desktop\BravoStar_Project2024\BravoStar\AppUserNominationDetails\obj\Debug\net6.0\refint\AppUserNominationDetails.dll
+C:\Users\DELL\Desktop\BravoStar_Project2024\BravoStar\AppUserNominationDetails\obj\Debug\net6.0\AppUserNominationDetails.pdb
+C:\Users\DELL\Desktop\BravoStar_Project2024\BravoStar\AppUserNominationDetails\obj\Debug\net6.0\ref\AppUserNominationDetails.dll
