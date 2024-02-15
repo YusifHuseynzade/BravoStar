@@ -91,6 +91,7 @@ builder.Services.AddCors(options =>
 //builder.Host.UseSerilog(log);
 
 builder.Services.AddApplicationUserServices();
+builder.Services.AddAppUserNominationServices();
 builder.Services.AddProjectServices();
 
 builder.Services.AddApplicationUserServices();

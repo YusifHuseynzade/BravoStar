@@ -1,6 +1,7 @@
 ﻿using Domain.Entities;
 using Domain.IRepositories;
 using Infrastructure.Persistence;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,6 +22,18 @@ namespace Infrastructure.Repositories
         public async Task<AppUser> GetUserByIdAsync(int userId)
         {
             return await _context.AppUsers.FindAsync(userId);
+        }
+
+        public async Task<List<AppUser>> GetUsersInSameProjectExceptCurrentUserAsync(int currentUserId)
+        {
+            // Şu anki kullanıcının ait olduğu proje ID'sini al
+            var currentUser = await GetUserByIdAsync(currentUserId);
+            var projectId = currentUser.ProjectId;
+
+            // Aynı projede bulunan diğer kullanıcıları al, ancak şu anki kullanıcıyı hariç tut
+            var otherUsers = await _context.AppUsers.Where(u => u.ProjectId == projectId && u.Id != currentUserId).ToListAsync();
+
+            return otherUsers;
         }
     }
 }

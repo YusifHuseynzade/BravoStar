@@ -16,7 +16,7 @@ namespace BravoStar.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> CreateAppUserVoting([FromBody] CreateAppUserVotingCommandRequest request)
+        public async Task<IActionResult> CreateAppUserVoting([FromQuery] CreateAppUserVotingCommandRequest request)
         {
             try
             {

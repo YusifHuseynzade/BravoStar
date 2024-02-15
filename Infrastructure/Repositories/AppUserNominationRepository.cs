@@ -28,5 +28,10 @@ namespace Infrastructure.Repositories
             _context.Set<AppUserNomination>().Remove(entity);
             await _context.SaveChangesAsync();
         }
+        public async Task<bool> UserHasVotedForSameNomineeAsync(int userId, int nominationId)
+        {
+            return await _context.AppUserNominations
+                .AnyAsync(n => n.AppUserId == userId && n.NominationId == nominationId);
+        }
     }
 }

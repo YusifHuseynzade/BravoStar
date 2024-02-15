@@ -12,5 +12,6 @@ namespace Domain.IRepositories
     {
         Task<List<AppUserNomination>> GetAllAsync(Expression<Func<AppUserNomination, bool>> predicate);
         Task DeleteAsync(AppUserNomination entity);
+        Task<bool> UserHasVotedForSameNomineeAsync(int userId, int nominationId);
     }
 }

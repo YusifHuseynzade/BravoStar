@@ -9,5 +9,6 @@ namespace AppUserNominationDetails.Commands.Response
     public class CreateAppUserVotingCommandResponse
     {
         public bool IsSuccess { get; set; }
+        public string ErrorMessage { get; set; }
     }
 }
