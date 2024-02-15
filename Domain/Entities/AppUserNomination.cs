@@ -9,6 +9,7 @@ namespace Domain.Entities
     public class AppUserNomination : BaseEntity
     {
         public int AppUserId { get; set; }
+        public int NomineeId { get; set; }
         public int NominationId { get; set; }
         public AppUser AppUser { get; set; }
         public Nomination Nomination { get; set; }
