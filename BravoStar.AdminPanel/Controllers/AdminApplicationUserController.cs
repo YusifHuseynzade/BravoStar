@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
-namespace Asan_LMS.AdminPanel.Controllers
+namespace BravoStar.AdminPanel.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]

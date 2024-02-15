@@ -38,15 +38,6 @@ namespace Infrastructure.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<string>("OTPToken")
-                        .HasColumnType("text");
-
-                    b.Property<DateTime>("OTPTokenCreated")
-                        .HasColumnType("timestamp with time zone");
-
-                    b.Property<DateTime>("OTPTokenExpires")
-                        .HasColumnType("timestamp with time zone");
-
                     b.Property<string>("Password")
                         .IsRequired()
                         .HasColumnType("text");

@@ -13,7 +13,6 @@ using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using ProjectDetails;
 using ProjectDetails.Profiles;
-using Serilog;
 using Swashbuckle.AspNetCore.Filters;
 using System.Reflection;
 
@@ -92,6 +91,7 @@ builder.Services.AddCors(options =>
 //builder.Host.UseSerilog(log);
 
 builder.Services.AddApplicationUserServices();
+builder.Services.AddApplicationUserServices();
 builder.Services.AddProjectServices();
 
 
@@ -108,7 +108,7 @@ var app = builder.Build();
 app.UseSwagger();
 app.UseSwaggerUI();
 //app.ConfigureExceptionHandler(app.Services.GetRequiredService<ILogger<Program>>());
-app.UseSerilogRequestLogging();
+//app.UseSerilogRequestLogging();
 app.UseHttpLogging();
 app.UseHttpsRedirection();
 

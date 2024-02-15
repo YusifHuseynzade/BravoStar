@@ -12,6 +12,5 @@ namespace ApplicationUserDetails.Commands.Request
         public string Password { get; set; }
         public int ProjectId { get; set; }
         public List<int> RoleIds { get; set; }
-        public List<int> NominationIds { get; set; }
     }
 }

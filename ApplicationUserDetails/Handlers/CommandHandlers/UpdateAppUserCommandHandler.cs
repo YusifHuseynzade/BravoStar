@@ -72,32 +72,6 @@ namespace ApplicationUserDetails.Handlers.CommandHandlers
                     await _userRoleRepository.CommitAsync();
                 }
 
-                if (request.NominationIds != null && request.NominationIds.Any())
-                {
-                    //// Remove existing roles
-                    var existingNominations = await _appUserNominationRepository.GetAllAsync(ur => ur.AppUserId == existingUser.Id);
-                    foreach (var nomination in existingNominations)
-                    {
-                        await _appUserNominationRepository.DeleteAsync(nomination);
-                    }
-
-                    // Add new roles
-                    foreach (var nominationId in request.NominationIds)
-                    {
-                        var nomination = await _nominationRepository.GetAsync(r => r.Id == nominationId);
-                        if (nomination != null)
-                        {
-                            var appUserNomination = new AppUserNomination
-                            {
-                                AppUserId = existingUser.Id,
-                                NominationId = nominationId
-                            };
-                            await _appUserNominationRepository.AddAsync(appUserNomination);
-                        }
-                    }
-
-                    await _userRoleRepository.CommitAsync();
-                }
 
                 response.IsSuccess = true;
                 response.Message = "User updated successfully.";

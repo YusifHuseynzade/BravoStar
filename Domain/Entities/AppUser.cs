@@ -8,9 +8,6 @@
         public int ProjectId { get; set; }
         public Project Project { get; set; }
         public string? RefreshToken { get; set; }
-        public string? OTPToken { get; set; }
-        public DateTime OTPTokenCreated { get; set; }
-        public DateTime OTPTokenExpires { get; set; }
         public List<AppUserNomination> AppUserNominations { get; set; }
         public List<AppUserRole>? AppUserRoles { get; set; }
 

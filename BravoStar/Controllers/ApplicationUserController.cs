@@ -6,7 +6,7 @@ using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
 
-namespace Asan_LMS.Controllers
+namespace BravoStar.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]

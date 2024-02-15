@@ -3,7 +3,7 @@ using ApplicationUserDetails.AppUserRoleDetails.Queries.Request;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Asan_LMS.AdminPanel.Controllers
+namespace BravoStar.AdminPanel.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]

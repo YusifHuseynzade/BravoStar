@@ -57,25 +57,6 @@ namespace Application.ApplicationUserDetails.Handlers.CommandHandlers
                     await _userRoleRepository.CommitAsync();
                 }
 
-                if (request.NominationIds != null && request.NominationIds.Any())
-                {
-                    foreach (var nominationId in request.NominationIds)
-                    {
-                        var nomination = await _nominationRepository.GetAsync(r => r.Id == nominationId);
-                        if (nomination != null)
-                        {
-                            var appUserNomination = new AppUserNomination
-                            {
-                                AppUserId = newUser.Id,
-                                NominationId = nominationId
-                            };
-                            await _appUserNominationRepository.AddAsync(appUserNomination);
-                        }
-                    }
-                    await _appUserNominationRepository.CommitAsync();
-                }
-
-               
                 response.IsSuccess = true;
                 response.Message = "User created successfully.";
             }

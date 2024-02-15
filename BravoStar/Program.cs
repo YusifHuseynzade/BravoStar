@@ -1,5 +1,6 @@
 using ApplicationUserDetails;
 using ApplicationUserDetails.Profiles;
+using AppUserNominationDetails.Profiles;
 using Autofac;
 using Autofac.Extensions.DependencyInjection;
 using AutoMapper;
@@ -63,6 +64,7 @@ builder.Services.AddSingleton(provider =>
     {
         cfg.AddProfile(new AppUserMapper(provider.GetService<IHttpContextAccessor>()));
         cfg.AddProfile(new ProjectMapper(provider.GetService<IHttpContextAccessor>()));
+        cfg.AddProfile(new AppUserNominationMapper(provider.GetService<IHttpContextAccessor>()));
     });
     return config.CreateMapper();
 });
