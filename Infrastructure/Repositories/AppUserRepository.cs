@@ -35,5 +35,30 @@ namespace Infrastructure.Repositories
 
             return otherUsers;
         }
+
+        public async Task<int> GetUserProjectIdAsync(int userId)
+        {
+            var user = await _context.AppUsers.FindAsync(userId);
+            return user?.ProjectId ?? 0;
+        }
+
+        public async Task<Dictionary<int, int>> GetProjectsUserCountsAsync()
+        {
+            var users = await _context.AppUsers.ToListAsync();
+            var projectUserCounts = users
+                .GroupBy(u => u.ProjectId)
+                .ToDictionary(g => g.Key, g => g.Count());
+
+            return projectUserCounts;
+        }
+
+        public async Task<int> GetProjectUserCountAsync(int projectId)
+        {
+            var projectUserCount = await _context.AppUsers.CountAsync(u => u.ProjectId == projectId);
+            return projectUserCount;
+        }
+
+       
+
     }
 }

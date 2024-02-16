@@ -95,18 +95,17 @@ namespace BravoStar.Controllers
             }
         }
 
-
-
-        [HttpGet("{id}")]
-        public async Task<ActionResult<GetByIdAppUserQueryResponse>> GetUserById(int id)
+        [HttpGet()]
+        public async Task<IActionResult> GetUserById([FromQuery] GetByIdAppUserQueryRequest request)
         {
-            var requestModel = new GetByIdAppUserQueryRequest { Id = id };
-            var user = await _mediator.Send(requestModel);
-            if (user == null)
+            var result = await _mediator.Send(request);
+
+            if (result == null)
             {
                 return NotFound();
             }
-            return user;
+
+            return Ok(result);
         }
     }
 }

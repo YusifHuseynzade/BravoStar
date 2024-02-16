@@ -24,7 +24,7 @@ namespace ApplicationUserDetails.Handlers.QueryHandlers
 
         public async Task<List<GetAppUserListResponse>> Handle(GetAllAppUserQueryRequest request, CancellationToken cancellationToken)
         {
-            var appUsers = _repository.GetAll(x => true);
+            var appUsers = _repository.GetAll(x => true, "Project");
 
             var response = _mapper.Map<List<GetAllAppUserQueryResponse>>(appUsers);
 

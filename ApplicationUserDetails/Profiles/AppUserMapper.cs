@@ -17,10 +17,14 @@ namespace ApplicationUserDetails.Profiles
 
             CreateMap<AppUser, GetAllAppUserQueryResponse>();
             CreateMap<AppUser, GetByIdAdminUserQueryResponse>();
-            CreateMap<AppUser, GetByIdAppUserQueryResponse>();
             CreateMap<CreateAppUserCommandRequest, AppUser>();
             CreateMap<UpdateAppUserCommandRequest, AppUser>();
 
+            CreateMap<Project, GetAppUserProjectResponse>();
+            CreateMap<Nomination, GetNominationResponse>();
+            CreateMap<AppUserNomination, GetAppUserNominationResponse>();
+            CreateMap<AppUser, GetVotedAppUserResponse>();
+            CreateMap<AppUserNomination, GetAppUserRateResponse>();
 
 
             CreateMap<AppUserRole, GetAllAppUserRoleQueryResponse>();

@@ -87,3 +87,4 @@ C:\Users\DELL\Desktop\BravoStar_Project2024\BravoStar\BravoStar\obj\Debug\net6.0
 C:\Users\DELL\Desktop\BravoStar_Project2024\BravoStar\BravoStar\obj\Debug\net6.0\ref\BravoStar.dll
 C:\Users\DELL\Desktop\BravoStar_Project2024\BravoStar\BravoStar\bin\Debug\net6.0\AppUserNominationDetails.dll
 C:\Users\DELL\Desktop\BravoStar_Project2024\BravoStar\BravoStar\bin\Debug\net6.0\AppUserNominationDetails.pdb
+C:\Users\DELL\Desktop\BravoStar_Project2024\BravoStar\BravoStar\obj\Debug\net6.0\BravoStar.MvcApplicationPartsAssemblyInfo.cs

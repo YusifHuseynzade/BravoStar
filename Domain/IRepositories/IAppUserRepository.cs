@@ -11,5 +11,11 @@ namespace Domain.IRepositories
     {
         Task<AppUser> GetUserByIdAsync(int userId);
         Task<List<AppUser>> GetUsersInSameProjectExceptCurrentUserAsync(int currentUserId);
+        Task<Dictionary<int, int>> GetProjectsUserCountsAsync();
+        Task<int> GetUserProjectIdAsync(int userId);
+
+        Task<int> GetProjectUserCountAsync(int projectId);
+       
+
     }
 }

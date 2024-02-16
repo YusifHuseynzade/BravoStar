@@ -1,5 +1,6 @@
 ﻿using ApplicationUserDetails.Commands.Request;
 using ApplicationUserDetails.Commands.Response;
+using ApplicationUserDetails.Queries.Request;
 using ApplicationUserDetails.Querires.Request;
 using ApplicationUserDetails.Querires.Response;
 using MediatR;
@@ -23,6 +24,15 @@ namespace BravoStar.AdminPanel.Controllers
         [HttpGet]
         //[Authorize(Roles = "Admin")]
         public async Task<IActionResult> GetAll([FromQuery] GetAllAppUserQueryRequest request)
+        {
+            var appUsers = await _mediator.Send(request);
+
+            return Ok(appUsers);
+        }
+
+        [HttpGet("appuservoting")]
+        //[Authorize(Roles = "Admin")]
+        public async Task<IActionResult> GetAllAppUserVoting([FromQuery] GetAllAppUserVotingQueryRequest request)
         {
             var appUsers = await _mediator.Send(request);
 

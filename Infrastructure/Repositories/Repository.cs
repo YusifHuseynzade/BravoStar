@@ -96,5 +96,23 @@ namespace Infrastructure.Repositories
 
             return query;
         }
+
+        public async Task<List<TEntity>> GetAllAsync(Expression<Func<TEntity, bool>> predicate = null, params string[] includes)
+        {
+            IQueryable<TEntity> query = _context.Set<TEntity>();
+
+            if (includes != null)
+            {
+                query = includes.Aggregate(query, (current, include) => current.Include(include));
+            }
+
+            if (predicate != null)
+            {
+                query = query.Where(predicate);
+            }
+
+            return await query.ToListAsync();
+        }
+
     }
 }

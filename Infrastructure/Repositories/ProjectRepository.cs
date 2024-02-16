@@ -1,6 +1,7 @@
 ﻿using Domain.Entities;
 using Domain.IRepositories;
 using Infrastructure.Persistence;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,5 +18,6 @@ namespace Infrastructure.Repositories
         {
             _context = context;
         }
+       
     }
 }
