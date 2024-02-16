@@ -7,11 +7,12 @@ using ApplicationUserDetails.Querires.Response;
 using AutoMapper;
 using Domain.Entities;
 using Domain.IRepositories;
+using Infrastructure.Constants;
 using MediatR;
 
 namespace ApplicationUserDetails.Handlers.QueryHandlers
 {
-    public class GetAllppUserVotingQueryHandler : IRequestHandler<GetAllAppUserVotingQueryRequest, List<GetAllAppUserVotingQueryResponse>>
+    public class GetAllppUserVotingQueryHandler : IRequestHandler<GetAllAppUserVotingQueryRequest, List<GetAppUserVotingListResponse>>
     {
         private readonly IMapper _mapper;
         private readonly IAppUserRepository _appUserRepository;
@@ -24,12 +25,14 @@ namespace ApplicationUserDetails.Handlers.QueryHandlers
             _appUserNominationRepository = appUserNominationRepository;
         }
 
-        public async Task<List<GetAllAppUserVotingQueryResponse>> Handle(GetAllAppUserVotingQueryRequest request, CancellationToken cancellationToken)
+        public async Task<List<GetAppUserVotingListResponse>> Handle(GetAllAppUserVotingQueryRequest request, CancellationToken cancellationToken)
         {
 
+            request.NormalizeDates();
             // Tüm oy veren kullanıcıları getir
             var appUserNominations = await _appUserNominationRepository.GetAllAsync(
-                an => true,
+                 an => (request.StartDate == null || an.CreatedAt >= request.StartDate) &&
+                      (request.EndDate == null || an.CreatedAt <= request.EndDate),
                 "AppUser", // AppUser ilişkisel verisini Include et
                 "Nomination" // Nomination ilişkisel verisini Include et
             );
@@ -65,7 +68,26 @@ namespace ApplicationUserDetails.Handlers.QueryHandlers
                 responses.Add(response);
             }
 
-            return responses;
+            if (request.ShowMore != null)
+            {
+                responses = responses.Skip((request.Page - 1) * request.ShowMore.Take)
+                                     .Take(request.ShowMore.Take)
+                                     .ToList();
+            }
+
+            var totalCount = appUserNominations.Count();
+
+            PaginationListDto<GetAllAppUserVotingQueryResponse> model =
+              new PaginationListDto<GetAllAppUserVotingQueryResponse>(responses, request.Page, request.ShowMore?.Take ?? responses.Count, totalCount);
+
+            return new List<GetAppUserVotingListResponse>
+            {
+                new GetAppUserVotingListResponse
+                {
+                    TotalAppUserVotingCount = totalCount,
+                    AppUserVotes = model.Items
+                }
+            };
         }
     }
 }
